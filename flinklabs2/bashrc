@@ -1,0 +1,18 @@
+export DERBY_HOME=/home/vagrant/db-derby-10.14.2.0-bin
+export GRADLE_HOME=/home/vagrant/gradle-3.4.1
+export DERBY_OPTS=-Dderby.system.home=/home/vagrant/DerbyDB
+
+alias ls='/bin/ls -F'
+
+function derby() {
+    startNetworkServer -h 0.0.0.0
+}
+
+function eclipse() {
+  /home/vagrant/eclipse/eclipse
+}
+
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:\
+/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:\
+/usr/lib/jvm/java-8-oracle/db/bin:/home/vagrant/gradle-3.4.1/bin:/home/vagrant/db-derby-10.14.2.0-bin/bin:\
+/home/vagrant/gradle-3.4.1/bin
