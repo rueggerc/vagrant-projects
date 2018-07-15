@@ -2,7 +2,7 @@ export DERBY_HOME=/home/vagrant/db-derby-10.14.2.0-bin
 export GRADLE_HOME=/home/vagrant/gradle-3.4.1
 export DERBY_OPTS=-Dderby.system.home=/home/vagrant/DerbyDB
 export KAFKA_HOME=/home/vagrant/kafka_2.11-1.1.0
-export FLINK_HOME=/home/vagrant/flink-1.5.0
+export FLINK_HOME=/home/vagrant/flink-1.5.1
 
 alias ls='/bin/ls -F'
 
@@ -32,11 +32,14 @@ function stop-zoo() {
 }
 
 function start-kafka() {
+  start-zoo
+  sleep 2
   nohup $KAFKA_HOME/bin/kafka-server-start.sh $KAFKA_HOME/config/server.properties > /dev/null 2>&1 &
 }
 
 function stop-kafka() {
-  $KAFKA_home/bin/kafka-server-stop.sh 
+  $KAFKA_home/bin/kafka-server-stop.sh
+  stop-zoo
 }
 
 function create-topic() {
@@ -49,15 +52,15 @@ function topics() {
 }
 
 function delete-topic() {
-  $KAFKA_HOME/bin/kafka-topics.sh --delete --zookeeper vagrant-ubuntu-trusty-64:2181 --topic $1
+  $KAFKA_HOME/bin/kafka-topics.sh --delete --zookeeper localhost:2181 --topic $1
 }
 
 function producer() {
-  $KAFKA_HOME/bin/kafka-console-producer.sh --broker-list vagrant-ubuntu-trusty-64:9092 --topic $1
+  $KAFKA_HOME/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic $1
 }
 
 function consumer() {
-  $KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server vagrant-ubuntu-trusty-64:9092 --topic $1 --from-beginning
+  $KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic $1 --from-beginning
 }
 
 
