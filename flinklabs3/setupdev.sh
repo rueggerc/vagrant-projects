@@ -20,11 +20,17 @@ tar -xvzf flink-1.5.1-bin-hadoop27-scala_2.11.tgz
 # Kafka
 wget http://apache.claz.org/kafka/1.1.0/kafka_2.11-1.1.0.tgz
 tar -xvzf kafka_2.11-1.1.0.tgz
+mkdir bin
+wget http://www.kafkatool.com/download2/kafkatool.sh
+chmod +x kafkatool.sh
+mv kafkatool.sh bin
 
 # Application Code
 mkdir code
 git clone https://github.com/rueggerc/Flink1.git
 git clone https://github.com/rueggerc/stream-producers.git
+chown -R vagrant:vagrant /home/vagrant/Flink1
+chown -R vagrant:vagrant /home/vagrant/stream-producers
 mv /home/vagrant/Flink1 /home/vagrant/code
 mv /home/vagrant/stream-producers /home/vagrant/code
 
@@ -52,14 +58,13 @@ cp /vagrant/kafka/*.properties /home/vagrant/kafka_2.11-1.1.0/config
 # File Ownerships
 chown -R vagrant:vagrant /home/vagrant/eclipse
 chown -R vagrant:vagrant /home/vagrant/code
-chown -R vagrant:vagrant /home/vagrant/Flink1
-chown -R vagrant:vagrant /home/vagrant/stream-producers
 chown -R vagrant:vagrant /home/vagrant/DerbyDB
 chown -R vagrant:vagrant /home/vagrant/db-derby-10.14.2.0-bin
 chown -R vagrant:vagrant /home/vagrant/flink-1.5.1
 chown -R vagrant:vagrant /home/vagrant/kafka_2.11-1.1.0
 chown -R vagrant:vagrant /home/vagrant/gradle-3.4.1
 chown -R vagrant:vagrant /home/vagrant/dbeaver
+chown -R vagrant:vagrant /home/vagrant/bin
 
 # Cleanup
 #mkdir /home/vagrant/
@@ -67,10 +72,14 @@ chown vagrant:vagrant *.gz
 chown vagrant:vagrant *.tgz
 chown vagrant:vagrant *.zip
 
-mkdir vagrant_downloads
-mv *.gz /home/vagrant/vagrant_downloads
-mv *.tgz /home/vagrant/vagrant_downloads
-mv *.zip /home/vagrant/vagrant_downloads
+#mkdir vagrant_downloads
+#mv *.gz /home/vagrant/vagrant_downloads
+#mv *.tgz /home/vagrant/vagrant_downloads
+#mv *.zip /home/vagrant/vagrant_downloads
+
+# Desktop
+#chown -R vagrant:vagrant /vagrant/desktop
+#cp /vagrant/desktop/*.desktop /home/vagrant/Desktop
 
 echo "exec startxfce4" > /home/vagrant/.xinitrc
 echo "exec xrandr -s 1600x1200" >> /home/vagrant/.xinitrc

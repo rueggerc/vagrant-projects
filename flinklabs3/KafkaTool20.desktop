@@ -1,0 +1,7 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Kafka Tool 2.0
+Exec=/bin/sh "/home/vagrant/kafkatool2/kafkatool"
+Icon=/home/vagrant/kafkatool2/.install4j/kafkatool.png
+Categories=Application;

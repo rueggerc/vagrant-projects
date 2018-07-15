@@ -65,7 +65,7 @@ function consumer() {
 
 
 
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:\
+export PATH=/home/vagrant/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:\
 /usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:\
 /usr/lib/jvm/java-8-oracle/db/bin:/home/vagrant/gradle-3.4.1/bin:/home/vagrant/db-derby-10.14.2.0-bin/bin:\
 /home/vagrant/gradle-3.4.1/bin

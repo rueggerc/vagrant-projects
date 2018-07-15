@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=DBeaver
+Comment=
+Exec=/home/vagrant/dbeaver/dbeaver
+Icon=/home/vagrant/dbeaver/icon.xpm
+Path=
+Terminal=false
+StartupNotify=false
