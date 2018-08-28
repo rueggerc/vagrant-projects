@@ -27,12 +27,14 @@ mv kafkatool.sh bin
 
 # Application Code
 mkdir code
-git clone https://github.com/rueggerc/Flink1.git
-git clone https://github.com/rueggerc/stream-producers.git
-chown -R vagrant:vagrant /home/vagrant/Flink1
-chown -R vagrant:vagrant /home/vagrant/stream-producers
-mv /home/vagrant/Flink1 /home/vagrant/code
-mv /home/vagrant/stream-producers /home/vagrant/code
+git clone https://github.com/rueggerc/Flink2.git
+chown -R vagrant:vagrant /home/vagrant/Flink2
+mv /home/vagrant/Flink2 /home/vagrant/code
+#git clone https://github.com/rueggerc/stream-producers.git
+#chown -R vagrant:vagrant /home/vagrant/stream-producers
+#mv /home/vagrant/stream-producers /home/vagrant/code
+
+
 
 # Derby
 wget http://www-eu.apache.org/dist/db/derby/db-derby-10.14.2.0/db-derby-10.14.2.0-bin.tar.gz
